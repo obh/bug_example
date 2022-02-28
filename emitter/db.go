@@ -42,11 +42,11 @@ func InitDB(username string, password string, database string) Database {
 func (_this Database) Emit(event Event) error {
 	log.Info("sending data to mysql")
 	//TODO understand this mystery - if i give incorrect insert query
-	err := _this.Db.Ping()
-	if err != nil {
-		log.Error("Connection failed ", err)
-		return err
-	}
+	// err := _this.Db.Ping()
+	// if err != nil {
+	// 	log.Error("Connection failed ", err)
+	// 	return err
+	// }
 	stmtIns, err := _this.Db.Prepare(insertQuery)
 	if err != nil {
 		log.Error("failed in preparing query ")
