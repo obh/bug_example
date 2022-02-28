@@ -21,3 +21,12 @@ export MYSQL_DB=testDb
 
 ## Start service
 go run main.go
+
+##Run test
+
+curl --request POST \
+  --url http://localhost:7000/v1/request \
+  --header 'Content-Type: application/json' \
+  --data '{
+	"MID": 27
+}'
